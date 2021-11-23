@@ -38,7 +38,38 @@ namespace ExifViewerCSharp
         public string ExifSubIFD_DateTimeDigitized;
         public string ExifSubIFD_TimeZone;
         public string ExifSubIFD_ShutterSpeed;
-        
+        public string ExifSubIFD_ExposureBias;
+        public string ExifSubIFD_MaxApertureValue;
+        public string ExifSubIFD_MeteringMode;
+        public string ExifSubIFD_WhiteBalance;
+        public string ExifSubIFD_Flash;
+        public string ExifSubIFD_FocalLength;
+        public string ExifSubIFD_ColorSpace;
+        public string ExifSubIFD_FocalPlaneXResolution;
+        public string ExifSubIFD_FocalPlaneYResolution;
+        public string ExifSubIFD_FocalPlaneResolutionUnit;
+        public string ExifSubIFD_SensingMethod;
+        public string ExifSubIFD_FileSource;
+        public string ExifSubIFD_SceneType;
+        public string ExifSubIFD_CustomRendered;
+        public string ExifSubIFD_ExposureMode;
+        public string ExifSubIFD_WhiteBalanceMode;
+        public string ExifSubIFD_DigitalZoomRatio;
+        public string ExifSubIFD_FocalLength35;
+        public string ExifSubIFD_SceneCaptureType;
+        public string ExifSubIFD_GainControl;
+        public string ExifSubIFD_Contrast;
+        public string ExifSubIFD_Saturation;
+        public string ExifSubIFD_Sharpness;
+        public string ExifSubIFD_BodySerialNumber;
+        public string ExifSubIFD_LensModel;
+        public string GPS_LatitudeRef;
+        public string GPS_Latitude;
+        public string GPS_LongitudeRef;
+        public string GPS_Longitude;
+
+
+
 
     }
 }

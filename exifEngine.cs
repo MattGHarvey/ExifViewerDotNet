@@ -20,6 +20,7 @@ namespace ExifViewerCSharp
         {
             exifData results = new exifData();
             IEnumerable<Directory> directories = ImageMetadataReader.ReadMetadata(imagePath);
+           // IEnumerable<Directory> gpsdirectory = directories.OfType(Of GpsDirectory)().FirstOrDefault()
             foreach (var directory in directories)
                 foreach (var tag in directory.Tags)
                 {
@@ -112,6 +113,94 @@ namespace ExifViewerCSharp
                             break;
                         case "Shutter Speed Value":
                             results.ExifSubIFD_ShutterSpeed = tag.Description;
+                            break;
+                        case "Exposure Bias Value":
+                            results.ExifSubIFD_ExposureBias = tag.Description;
+                            break;
+                        case "Max Aperture Value":
+                            results.ExifSubIFD_MaxApertureValue = tag.Description;
+                            break;
+                        case "Metering Mode":
+                            results.ExifSubIFD_MeteringMode = tag.Description;
+                            break;
+                        case "White Balance":
+                            results.ExifSubIFD_WhiteBalance = tag.Description;
+                            break;
+                        case "Flash":
+                            results.ExifSubIFD_Flash = tag.Description;
+                            break;
+                        case "Focal Length":
+                            results.ExifSubIFD_FocalLength = tag.Description;
+                            break;
+                        case "Color Space":
+                            results.ExifSubIFD_ColorSpace = tag.Description;
+                            break;
+                        case "Focal Plane X Resolution":
+                            results.ExifSubIFD_FocalPlaneXResolution = tag.Description;
+                            break;
+                        case "Focal Plane Y Resolution":
+                            results.ExifSubIFD_FocalPlaneYResolution = tag.Description;
+                            break;
+                        case "Focal Plane Resolution Unit":
+                            results.ExifSubIFD_FocalPlaneResolutionUnit = tag.Description;
+                            break;
+                        case "Sensing Method":
+                            results.ExifSubIFD_SensingMethod = tag.Description;
+                            break;
+                        case "File Source":
+                            results.ExifSubIFD_FileSource = tag.Description;
+                            break;
+                        case "Scene Type":
+                            results.ExifSubIFD_SceneType = tag.Description;
+                            break;
+                        case "Custom Rendered":
+                            results.ExifSubIFD_CustomRendered = tag.Description;
+                            break;
+                        case "Exposure Mode":
+                            results.ExifSubIFD_ExposureMode = tag.Description;
+                            break;
+                        case "White Balance Mode":
+                            results.ExifSubIFD_WhiteBalanceMode = tag.Description;
+                            break;
+                        case "Digital Zoom Ratio":
+                            results.ExifSubIFD_DigitalZoomRatio = tag.Description;
+                            break;
+                        case "Focal Length 35":
+                            results.ExifSubIFD_FocalLength35 = tag.Description;
+                            break;
+                        case "Scene Capture Type":
+                            results.ExifSubIFD_SceneCaptureType = tag.Description;
+                            break;
+                        case "Gain Control":
+                            results.ExifSubIFD_GainControl = tag.Description;
+                            break;
+                        case "Contrast":
+                            results.ExifSubIFD_Contrast = tag.Description;
+                            break;
+                        case "Saturation":
+                            results.ExifSubIFD_Saturation = tag.Description;
+                            break;
+                        case "Sharpness":
+                            results.ExifSubIFD_Sharpness = tag.Description;
+                            break;
+                        case "Body Serial Number":
+                            results.ExifSubIFD_BodySerialNumber = tag.Description;
+                            break;
+                        case "Lens Model":
+                            results.ExifSubIFD_LensModel = tag.Description;
+                            break;
+                        case "GPS Latitude Ref":
+                            results.GPS_LatitudeRef = tag.Description;
+                            break;
+                        case "GPS Latitude":
+                            results.GPS_Latitude = tag.Description;
+                            results.GPS_Longitude = 
+                            break;
+                        case "GPS Longitude Ref":
+                            results.GPS_LongitudeRef = tag.Description;
+                            break;
+                        case "GPS Longitude":
+                            results.GPS_Longitude = tag.Description;
                             break;
                         default:
                             continue;
