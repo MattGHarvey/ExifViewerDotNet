@@ -31,6 +31,7 @@ namespace ExifViewerCSharp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.label1 = new System.Windows.Forms.Label();
+            this.lnkGitHub = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label1
@@ -46,12 +47,25 @@ namespace ExifViewerCSharp
             this.label1.Text = "EXIFViewer is presented without warranty or guarantee and is licensed under the G" +
     "NU General Public License v3.0";
             // 
+            // lnkGitHub
+            // 
+            this.lnkGitHub.AutoSize = true;
+            this.lnkGitHub.Location = new System.Drawing.Point(185, 51);
+            this.lnkGitHub.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lnkGitHub.Name = "lnkGitHub";
+            this.lnkGitHub.Size = new System.Drawing.Size(92, 13);
+            this.lnkGitHub.TabIndex = 4;
+            this.lnkGitHub.TabStop = true;
+            this.lnkGitHub.Text = "Find Us on Github";
+            this.lnkGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkGitHub_LinkClicked);
+            // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(462, 115);
+            this.Controls.Add(this.lnkGitHub);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -67,5 +81,6 @@ namespace ExifViewerCSharp
         #endregion
 
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.LinkLabel lnkGitHub;
     }
 }

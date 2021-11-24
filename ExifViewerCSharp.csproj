@@ -149,9 +149,9 @@
     <PackageReference Include="Microsoft.Toolkit.Forms.UI.Controls.WebView">
       <Version>6.1.2</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.1020.30</Version>
-    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

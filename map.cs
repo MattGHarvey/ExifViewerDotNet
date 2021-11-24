@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Web.WebView2.WinForms;
-using Microsoft.Web.WebView2.Core;
 namespace ExifViewerCSharp
 {
     public partial class Map : Form
@@ -23,7 +21,7 @@ namespace ExifViewerCSharp
         {
 
            
-            //mapView.EnsureCoreWebView2Async();
+          
             
             mapView.Navigate(new Uri(mapURL));
 
