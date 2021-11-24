@@ -9,19 +9,11 @@ namespace ExifViewerCSharp
 {
     internal class exifEngine
     {
-        public  string getExifString(string imagePath)
-        {
-            IEnumerable<Directory> directories = ImageMetadataReader.ReadMetadata(imagePath);
-            foreach (var directory in directories)
-                foreach (var tag in directory.Tags)
-                    Console.WriteLine($"{directory.Name} - {tag.Name} = {tag.Description}");
-            return "meh";
-        }
+       
         public exifData getExifData(string imagePath)
         {
             exifData results = new exifData();
             IEnumerable<Directory> directories = ImageMetadataReader.ReadMetadata(imagePath);
-            // IEnumerable<Directory> gpsdirectory = directories.OfType(Of GpsDirectory)().FirstOrDefault()
             var gpsdirectory = directories.OfType<MetadataExtractor.Formats.Exif.GpsDirectory>().FirstOrDefault();
             foreach (var directory in directories)
                 foreach (var tag in directory.Tags)
@@ -243,6 +235,9 @@ namespace ExifViewerCSharp
                             break;
                         case "Copyright Notice":
                             results.IPTC_Notice = tag.Description;
+                            break;
+                        case "File Name":
+                            results.FileName = tag.Description;
                             break;
                          default:
                             continue;
