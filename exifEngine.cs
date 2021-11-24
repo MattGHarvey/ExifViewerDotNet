@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Directory = MetadataExtractor.Directory;
 
 namespace ExifViewerCSharp
@@ -20,7 +21,8 @@ namespace ExifViewerCSharp
         {
             exifData results = new exifData();
             IEnumerable<Directory> directories = ImageMetadataReader.ReadMetadata(imagePath);
-           // IEnumerable<Directory> gpsdirectory = directories.OfType(Of GpsDirectory)().FirstOrDefault()
+            // IEnumerable<Directory> gpsdirectory = directories.OfType(Of GpsDirectory)().FirstOrDefault()
+            var gpsdirectory = directories.OfType<MetadataExtractor.Formats.Exif.GpsDirectory>().FirstOrDefault();
             foreach (var directory in directories)
                 foreach (var tag in directory.Tags)
                 {
@@ -193,17 +195,58 @@ namespace ExifViewerCSharp
                             results.GPS_LatitudeRef = tag.Description;
                             break;
                         case "GPS Latitude":
-                            results.GPS_Latitude = tag.Description;
-                            results.GPS_Longitude = 
+                            //results.GPS_Latitude = tag.Description;
+                            results.GPS_Latitude = gpsdirectory.GetGeoLocation().Latitude.ToString();
                             break;
                         case "GPS Longitude Ref":
                             results.GPS_LongitudeRef = tag.Description;
                             break;
                         case "GPS Longitude":
-                            results.GPS_Longitude = tag.Description;
+                            //results.GPS_Longitude = tag.Description;
+                            results.GPS_Longitude = gpsdirectory.GetGeoLocation().Longitude.ToString();
                             break;
-                        default:
+                        case "GPS Speed Ref":
+                            results.GPS_SpeedRef = tag.Description;
+                            break;
+                        case "GPS Speed":
+                            results.GPS_Speed = tag.Description;
+                            break;
+                        case "GPS Track Ref":
+                            results.GPS_TrackRef = tag.Description;
+                            break;
+                        case "GPS Track":
+                            results.GPS_Track = tag.Description;
+                            break;
+                        case "Coded Character Set":
+                            results.IPTC_CharSet = tag.Description;
+                            break;
+                        case "Object Name":
+                            results.IPTC_ObjectName = tag.Description;
+                            break;
+                        case "Keywords":
+                            results.IPTC_Keywords = tag.Description;
+                            break;
+                        case "By-line":
+                            results.IPTC_Byline = tag.Description;
+                            break;
+                        case "City":
+                            results.IPTC_City = tag.Description;
+                            break;
+                        case "Province/State":
+                            results.IPTC_ProvinceState = tag.Description;
+                            break;
+                        case "Country/Primary Location Code":
+                            results.IPTC_CountryPrimaryLocationCode = tag.Description;
+                            break;
+                        case "Country/Primary Location Name":
+                            results.IPTC_CountryPrimaryLocationName = tag.Description;
+                            break;
+                        case "Copyright Notice":
+                            results.IPTC_Notice = tag.Description;
+                            break;
+                         default:
                             continue;
+
                     }
                 }
             return results;

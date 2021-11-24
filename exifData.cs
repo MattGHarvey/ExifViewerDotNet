@@ -67,6 +67,25 @@ namespace ExifViewerCSharp
         public string GPS_Latitude;
         public string GPS_LongitudeRef;
         public string GPS_Longitude;
+        public string GPS_SpeedRef;
+        public string GPS_Speed;
+        public string GPS_TrackRef;
+        public string GPS_Track;
+        public string IPTC_CharSet;
+        public string IPTC_ObjectName;
+        public string IPTC_Keywords;
+        public string IPTC_Byline;
+        public string IPTC_City;
+        public string IPTC_ProvinceState;
+        public string IPTC_CountryPrimaryLocationCode;
+        public string IPTC_CountryPrimaryLocationName;
+        private string _IPTC_Notice;
+        public string IPTC_Notice   
+
+        {
+            get => _IPTC_Notice;
+            set => _IPTC_Notice = value;
+        }
 
 
 
