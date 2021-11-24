@@ -98,7 +98,7 @@ namespace ExifViewerCSharp
 
         private void btnViewOnGoogleMaps_Click(object sender, EventArgs e)
         {
-            map m = new map();
+            Map m = new Map();
             m.mapURL = utility.osmapURL;
             m.Show();
             

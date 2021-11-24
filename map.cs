@@ -11,10 +11,10 @@ using Microsoft.Web.WebView2.WinForms;
 using Microsoft.Web.WebView2.Core;
 namespace ExifViewerCSharp
 {
-    public partial class map : Form
+    public partial class Map : Form
     {
         public string mapURL;
-        public map()
+        public Map()
         {
             InitializeComponent();
         }
@@ -23,9 +23,10 @@ namespace ExifViewerCSharp
         {
 
            
-            mapView.EnsureCoreWebView2Async();
+            //mapView.EnsureCoreWebView2Async();
             
-            mapView.Source = new Uri(mapURL);
+            mapView.Navigate(new Uri(mapURL));
+
             
         }
     }
