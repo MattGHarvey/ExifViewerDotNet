@@ -21,8 +21,11 @@ namespace ExifViewerCSharp
         public const string flashString = "Flash: ";
         public const string colorSpaceString = "Color Space: ";
         public const string coordinatesString = "Coordinates: ";
-        
-        
+
+        public const string filter = "JPG files|*.jpg|JPEG files|*.jpeg|Raw files|*.arw";
+
+
+
     }
    
 }

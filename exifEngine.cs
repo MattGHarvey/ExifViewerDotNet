@@ -239,7 +239,13 @@ namespace ExifViewerCSharp
                         case "File Name":
                             results.FileName = tag.Description;
                             break;
-                         default:
+                        case "Thumbnail Offset":
+                            results.thumbOffset = Int32.Parse( tag.Description.Replace("bytes",null));
+                            break;
+                        case "Thumbnail Length":
+                            results.thumbLen = Int32.Parse(tag.Description.Replace("bytes",null));
+                            break;
+                        default:
                             continue;
 
                     }

@@ -40,10 +40,10 @@ namespace ExifViewerCSharp
             exifEngine exif = new exifEngine();
             exifData exd = new exifData();
             exd = exif.getExifData(filename);
-
+            utility u = new utility();
             if (exd != null)
             {
-                utility u = new utility();
+                //utility u = new utility();
                 this.txtExif.Text = u.BuildString(exd);
                 this.exifString = u.getRawExifData(filename);
                 if (u.hasGeo == true)
@@ -51,15 +51,20 @@ namespace ExifViewerCSharp
                     this.btnViewOnGoogleMaps.Visible = true;
                 }
             }
-            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+           
+           
+                FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+             
+            //FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
             this.pictureBox1.Image = System.Drawing.Image.FromStream(fs);
             fs.Close();
+            this.pictureBox1.BackgroundImage = null;
             this.showAllEXIFDataToolStripMenuItem.Enabled = true;
             
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            this.openFileDialog1.Filter = constants.filter;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

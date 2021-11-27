@@ -520,6 +520,21 @@ namespace ExifViewerCSharp
             set => _FileName = value;
         }
 
+        private int _thumbOffset;
+        public int thumbOffset
+
+        {
+            get => _thumbOffset;
+            set => _thumbOffset = value;
+        }
+        private int _thumbLen;
+        public int thumbLen
+
+        {
+            get => _thumbLen;
+            set => _thumbLen = value;
+        }
+
 
 
     }

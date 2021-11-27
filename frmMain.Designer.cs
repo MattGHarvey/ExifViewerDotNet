@@ -33,13 +33,13 @@ namespace ExifViewerCSharp
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadPhotoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllEXIFDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtExif = new System.Windows.Forms.TextBox();
             this.btnViewOnGoogleMaps = new System.Windows.Forms.Button();
-            this.showAllEXIFDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,21 @@ namespace ExifViewerCSharp
             this.loadPhotoToolStripMenuItem.Text = "Load Photo...";
             this.loadPhotoToolStripMenuItem.Click += new System.EventHandler(this.loadPhotoToolStripMenuItem_Click);
             // 
+            // showAllEXIFDataToolStripMenuItem
+            // 
+            this.showAllEXIFDataToolStripMenuItem.Enabled = false;
+            this.showAllEXIFDataToolStripMenuItem.Name = "showAllEXIFDataToolStripMenuItem";
+            this.showAllEXIFDataToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.showAllEXIFDataToolStripMenuItem.Text = "Show All EXIF Data...";
+            this.showAllEXIFDataToolStripMenuItem.Click += new System.EventHandler(this.showAllEXIFDataToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -82,7 +97,6 @@ namespace ExifViewerCSharp
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "JPG files|*.jpg|JPEG files|*.jpeg";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // pictureBox1
@@ -122,21 +136,6 @@ namespace ExifViewerCSharp
             this.btnViewOnGoogleMaps.UseVisualStyleBackColor = true;
             this.btnViewOnGoogleMaps.Visible = false;
             this.btnViewOnGoogleMaps.Click += new System.EventHandler(this.btnViewOnGoogleMaps_Click);
-            // 
-            // showAllEXIFDataToolStripMenuItem
-            // 
-            this.showAllEXIFDataToolStripMenuItem.Enabled = false;
-            this.showAllEXIFDataToolStripMenuItem.Name = "showAllEXIFDataToolStripMenuItem";
-            this.showAllEXIFDataToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.showAllEXIFDataToolStripMenuItem.Text = "Show All EXIF Data...";
-            this.showAllEXIFDataToolStripMenuItem.Click += new System.EventHandler(this.showAllEXIFDataToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // frmMain
             // 

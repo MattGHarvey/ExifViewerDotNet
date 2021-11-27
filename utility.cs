@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using System.IO;
 using Directory = MetadataExtractor.Directory;
 using MetadataExtractor;
+using System.Drawing;
 
 namespace ExifViewerCSharp
 {
@@ -51,6 +53,16 @@ namespace ExifViewerCSharp
                 }
            
                 return rawExif;
+        }
+      
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
         }
     }
 }
